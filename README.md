@@ -18,11 +18,14 @@ Vérifications et build : `npm run typecheck`, `npm run lint`, `npm test`, `npm 
 - `src/shell/` : navigation, accueil, mémo et portfolio.
 - `src/tools/`, `src/games/`, `src/generators/` : interfaces chargées à la demande.
 - `src/lib/core.ts` : fonctions métier indépendantes de l’interface.
-- `src/data/` : catalogue Linux, projets portfolio.
+- `src/data/` : catalogue Linux (base et fiches complémentaires), projets et contenus portfolio vérifiés.
+- `src/lib/generators.ts` : conversions de couleurs et génération de styles testées.
 - `src/style.css` : thèmes, composants et responsive.
-- `public/` : favicon et visuel de partage.
+- `public/` : favicon, visuel de partage et illustration PNG transparente du moustique.
 
-Ajout d’un outil : ajouter les calculs dans `src/lib/core.ts` si réutilisables, créer son formulaire dans `src/tools/Tools.tsx`, puis l’inscrire dans `toolNames` dans `src/shell/App.tsx`. Ajout d’une fiche Linux : compléter `rows` dans `src/data/linux.ts` avec commande, objectif, syntaxe, exemple, options et niveau de prudence. Ajout d’une question : ajouter une entrée à `quiz` dans `src/games/Games.tsx` avec une réponse correcte unique et une explication. Ajout d’un projet : modifier `src/data/projects.ts`; ne renseigner que les capacités et technologies vérifiées dans le dépôt public.
+Ajout d’un outil : ajouter les calculs dans `src/lib/core.ts` si réutilisables, créer son formulaire dans `src/tools/Tools.tsx`, puis l’inscrire dans `toolNames` dans `src/shell/App.tsx`. Ajout d’une fiche Linux : compléter `src/data/linux-extra.ts` en donnant catégorie, syntaxe, options, prérequis et niveau de prudence. Ajout d’une question : ajouter une entrée à `quiz` dans `src/games/Games.tsx` avec une réponse correcte unique et une explication. Ajout d’un projet : modifier `src/data/projects.ts`; ne renseigner que les capacités et technologies vérifiées dans le dépôt public.
+
+Pour ajouter un générateur, ajouter son identifiant et son nom au catalogue `gens` dans `src/shell/App.tsx`, puis router son interface dans `src/generators/GeneratorRouter.tsx`. Les fonctions de calcul réutilisables vont dans `src/lib/` avec leurs tests Vitest.
 
 ## Données locales et confidentialité
 
@@ -34,4 +37,4 @@ Vite utilise la base `/SonFire-Lab/`; le routage est par hash. Le workflow `.git
 
 Dans les réglages du dépôt GitHub, ouvrez **Settings → Pages** et choisissez **GitHub Actions** comme source de publication. Après le premier workflow vert, le site sera disponible à l’adresse : <https://sonfire03.github.io/SonFire-Lab/>.
 
-Le dossier Git présent dans l’environnement était vide et en lecture seule; aucun commit ni déploiement n’a été effectué depuis cet environnement.
+Les projets et certificats TryHackMe présentés sont sélectionnés depuis les README des dépôts publics et la page publique des certificats de Sofiane. La liste est volontairement éditoriale : le profil GitHub permet de consulter l’ensemble des dépôts.

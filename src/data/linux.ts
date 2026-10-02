@@ -3,3 +3,6 @@ const rows:[string,string,string,string,string,boolean][]=[
 ];
 export const categories=['Navigation et fichiers','Recherche et texte','Permissions','Processus','Services et journaux','Réseau','Disques et stockage','Paquets','Archives','Diagnostic système','Git','Sécurité de base'];
 export const linuxCards=rows.map((r,i)=>({id:r[0],command:r[0],description:r[1],syntax:r[2],example:r[3],options:r[4],sensitive:r[5],category:categories[[0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,2,2,2,3,3,3,3,3,4,4,4,5,5,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,9,9,9,9,9,9,9,10,10,10,10,10,10,11,11][i]??0]??categories[0],tags:[r[0],r[1].toLowerCase()],prereq:r[5]?'Peut nécessiter des droits adaptés selon le système et la cible.':'Aucun prérequis particulier.',output:`$ ${r[3]}\nSortie simulée à titre d’exemple — aucune commande n’a été exécutée.`}));
+import {additionalLinuxCards} from './linux-extra';
+linuxCards.push(...additionalLinuxCards);
+linuxCards.forEach(entry=>{if(['ssh','sudo','ufw','sha256sum'].includes(entry.command))entry.category=categories[11];});
