@@ -1,7 +1,7 @@
 name: Build and deploy SonFire Lab
 on:
   push:
-    branches: [main]
+    branches: [codex/sonfire-lab]
   pull_request:
   workflow_dispatch:
 permissions:

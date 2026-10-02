@@ -30,7 +30,7 @@ Le navigateur conserve uniquement thème, favoris, records et historique limité
 
 ## GitHub Pages
 
-Vite utilise la base `/SonFire-Lab/`; le routage est par hash. Le workflow `.github/workflows/pages.yml` vérifie les pull requests sans publier, et déploie après un push sur `main`. Si votre branche par défaut porte un autre nom, mettez à jour `branches` dans le workflow.
+Vite utilise la base `/SonFire-Lab/`; le routage est par hash. Le workflow `.github/workflows/pages.yml` vérifie les pull requests sans publier et déploie après un push sur la branche par défaut actuelle `codex/sonfire-lab`. Si la branche par défaut change, mettez à jour `branches` dans le workflow.
 
 Dans les réglages du dépôt GitHub, ouvrez **Settings → Pages** et choisissez **GitHub Actions** comme source de publication. Après le premier workflow vert, le site sera disponible à l’adresse : <https://sonfire03.github.io/SonFire-Lab/>.
 
